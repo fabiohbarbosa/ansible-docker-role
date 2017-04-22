@@ -1,6 +1,6 @@
 ---
 - debug:
-    msg: "Run fabiohbarbosa.docker-ce role for users: {{item}}"
+    msg: "Run fabiohbarbosa.docker role for users: {{item}}"
   with_items: '{{docker_users}}'
 
 - name: 'Check distribution compatibility'
