@@ -1,5 +1,5 @@
-ubuntu-ansible-docker-ce-role:
-  image: ansible-docker-ce-role
-  container_name: ansible-docker-ce-role
+ubuntu-ansible-docker-role:
+  image: ansible-docker-role
+  container_name: ansible-docker-role
   volumes:
     - ../:/tmp/environment-setup
