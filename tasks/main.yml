@@ -1,0 +1,6 @@
+---
+- include: docker.yml
+  become: yes
+
+- include: compose.yml
+  become: yes

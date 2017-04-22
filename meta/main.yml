@@ -1,0 +1,19 @@
+galaxy_info:
+  author: fabiohbarbosa
+  description: docker-ce and docker-compose installation
+  
+  license: MIT
+  
+  min_ansible_version: 1.6
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+    - yakkety
+    - zesty
+
+  galaxy_tags: [ docker, docker-ce, docker-compose ]
+
+dependencies: []
