@@ -14,6 +14,6 @@ galaxy_info:
     - yakkety
     - zesty
 
-  galaxy_tags: [ docker, docker-ce, docker-compose ]
+  galaxy_tags: [ docker, docker_ce, docker_compose, compose ]
 
 dependencies: []
