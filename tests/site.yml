@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars_files:
+    - '../defaults/main.yml'
+  vars:
+    docker_users: [docker_ansible]
+  tasks:
+    - include: '../tasks/main.yml'
