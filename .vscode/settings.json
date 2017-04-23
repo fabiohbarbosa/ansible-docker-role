@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "**/.history": true,
+    "**/.git": true,
+    "**/*.retry": true,
+    "**/.DS_Store": true
+  }
+}
