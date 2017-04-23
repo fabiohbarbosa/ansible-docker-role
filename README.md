@@ -1,4 +1,9 @@
-## Ansible Docker Role [![Build Status](https://travis-ci.org/fabiohbarbosa/ansible-docker-role.png)](https://travis-ci.org/fabiohbarbosa/ansible-docker-role)
+Ansible Docker Role 
+======
+
+[![Build Status](https://travis-ci.org/fabiohbarbosa/ansible-docker-role.png)](https://travis-ci.org/fabiohbarbosa/ansible-docker-role)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-docker-blue.svg?style=flat-square)](https://galaxy.ansible.com/fabiohbarbosa/docker/)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 Ansible role to install docker and docker compose.
 
