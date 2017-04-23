@@ -2,6 +2,9 @@ FROM ubuntu:17.04
 
 USER root
 
+RUN ulimit -n 1048576
+RUN ulimit -p unlimited
+
 RUN apt-get update && \
     apt-get install curl sudo ansible git -y
 
