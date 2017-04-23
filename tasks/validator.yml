@@ -1,0 +1,16 @@
+---
+- name: Checking required variables
+  fail: msg="Variable '{{ item }}' is not defined" 
+  when: item is undefined
+  with_items: 
+    - '{{ci_env}}'
+    - '{{docker_users}}'
+    - '{{docker_compose_version}}'
+
+- name: Checking distribution compatibility
+  fail: msg="Role not compatibility with {{ ansible_distribution }} distribuition"
+  when: ansible_distribution != 'Ubuntu'
+
+- name: Checking Ubuntu release compatibility
+  fail: msg="Role not compatibility with {{ ansible_distribution_release }}"
+  when: ansible_distribution_release != 'trusty' and ansible_distribution_release != 'xenial' and ansible_distribution_release != 'yakkety' and ansible_distribution_release != 'zesty'
