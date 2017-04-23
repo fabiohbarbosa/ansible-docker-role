@@ -47,3 +47,4 @@
   service:
     name: docker
     state: restarted
+  when: not ci_env

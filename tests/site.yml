@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  vars_files:
-    - '../defaults/main.yml'
   vars:
+    ci_env: true
+    docker_compose_version: 1.12.0
     docker_users: [docker_ansible]
   tasks:
     - include: '../tasks/main.yml'
