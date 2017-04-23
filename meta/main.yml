@@ -13,6 +13,6 @@ galaxy_info:
     - xenial
     - yakkety
 
-  galaxy_tags: [ docker, dockerce, dockercompose ]
+  galaxy_tags: [ docker, dockerce, dockercompose, system ]
 
 dependencies: []
