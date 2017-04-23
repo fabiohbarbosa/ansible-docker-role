@@ -9,7 +9,7 @@ before_install:
   - docker build -t ansible-docker-role tests/
 
 script:
-  - sh test.sh
+  - bash test.sh
 
 notifications:
   email: false
