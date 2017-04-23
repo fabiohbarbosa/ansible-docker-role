@@ -9,7 +9,7 @@ before_install:
   - docker build -t ansible-docker-role tests/
 
 script:
-  - docker run -v `pwd`:/tmp/environment-setup -i -t ansible-docker-role
+  - sh test.sh
 
 notifications:
   email: false
