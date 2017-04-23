@@ -1,0 +1,40 @@
+---
+- name: Checking required variables
+  fail: msg="Variable '{{ item }}' is not defined" 
+  when: item is undefined
+  with_items: 
+    - '{{ci_env}}'
+    - '{{docker_users}}'
+    - '{{docker_compose_version}}'
+
+- name: Set docker repository using distribution release 'Ubuntu Zesty' or 'Ubuntu Yakkety'
+  set_fact:
+     apt_docker_repository: https://download.docker.com/linux/ubuntu yakkety stable
+  when: ansible_distribution_release == '{{item}}'
+  with_items:
+    - 'zesty'
+    - 'yakkety'
+
+- name: Set docker repository using distribution release 'Ubuntu Xenial', 'LinuxMint Serena' or 'LinuxMint Sarah'
+  set_fact:
+     apt_docker_repository: https://download.docker.com/linux/ubuntu xenial stable
+  when: ansible_distribution_release == '{{item}}'
+  with_items:
+    - 'xenial'
+    - 'serena'
+    - 'sarah'
+
+- name: Set docker repository using distribution release 'Ubuntu Trusty', 'LinuxMint Rosa', 'LinuxMint Rafaela', 'LinuxMint Rebecca' or 'LinuxMint Qiana'
+  set_fact:
+     apt_docker_repository: https://download.docker.com/linux/ubuntu trusty stable
+  when: ansible_distribution_release == '{{item}}'
+  with_items:
+    - 'trusty'
+    - 'rosa'
+    - 'rafaela'
+    - 'rebecca'
+    - 'qiana'
+
+- name: Checking distribution compatibility
+  fail: msg="Role not compatibility for {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  when: apt_docker_repository is undefined

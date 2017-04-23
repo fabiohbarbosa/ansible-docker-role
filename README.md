@@ -7,6 +7,8 @@ Ansible Docker Role
 
 Ansible role to install docker and docker compose.
 
+> **Compatibility with new Ubuntu Zesty!!!!**
+
 
 Requirements
 ------------

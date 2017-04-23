@@ -1,10 +1,4 @@
 ---
-- name: Uninstall old versions
-  apt: name={{item}} state=absent
-  with_items:
-    - docker
-    - docker-engine
-
 - name: Update apt packages
   apt: update_cache=true
 
@@ -16,6 +10,12 @@
     - curl
     - software-properties-common
 
+- name: Uninstall old versions
+  apt: name={{item}} state=absent
+  with_items:
+    - docker
+    - docker-engine
+
 - name: Add Docker official GPG key
   apt_key:
     url: "https://download.docker.com/linux/ubuntu/gpg"
@@ -23,15 +23,8 @@
 
 - name: Add docker stable repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    repo: deb [arch=amd64] {{ apt_docker_repository }}
     state: present
-  when: ansible_distribution_release == 'zesty'
-
-- name: Add docker stable repository
-  apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
-    state: present
-  when: ansible_distribution_release == 'trusty' or ansible_distribution_release == 'xenial' or ansible_distribution_release == 'yakkety'
 
 - name: Update apt packages
   apt: update_cache=true

@@ -1,11 +1,14 @@
 ---
 - debug:
-    msg: "Running fabiohbarbosa.docker role"
-    
-- include: validator.yml
+    msg: 
+      - "***********************************************************************"
+      - "Running fabiohbarbosa.docker role for {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+      - "***********************************************************************"
+
+- include: compatibility.yml
 
 - include: docker.yml
-  become: yes
+  sudo: yes
 
 - include: compose.yml
-  become: yes
+  sudo: yes

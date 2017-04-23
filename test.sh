@@ -1,7 +1,25 @@
 #!/bin/bash
 
-cd tests && \
-  docker-compose stop && \
-  docker-compose rm -f && \
-  docker build -t ansible-docker-role . && \
-  docker-compose up
+pwd=`pwd`
+volume="$pwd:/tmp/environment-setup"
+image_name="ansible-docker-role"
+
+cd tests
+for dir in */ ; do
+    for subdir in "$dir*" ; do
+        IFS=' ' list=($subdir)
+        for distro in "${list[@]}"; do 
+            echo "Starting build $distro"
+            docker build -t $image_name $distro && docker run -v $volume --rm -i -t $image_name
+            if [[ $? != 0 ]]; then
+              echo
+              echo "==="
+              echo "[ERROR] Error to build $distro!"
+              exit $?
+            fi
+            echo '##############################################################################'
+            echo '##############################################################################'
+            echo '##############################################################################'
+        done
+    done
+done
