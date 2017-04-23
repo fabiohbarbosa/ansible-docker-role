@@ -1,4 +1,4 @@
-## Docker [![Build Status](https://travis-ci.org/fabiohbarbosa/ansible-docker-role.png)](https://travis-ci.org/fabiohbarbosa/ansible-docker-role)
+## Ansible Docker Role [![Build Status](https://travis-ci.org/fabiohbarbosa/ansible-docker-role.png)](https://travis-ci.org/fabiohbarbosa/ansible-docker-role)
 
 Ansible role to install docker and docker compose.
 
