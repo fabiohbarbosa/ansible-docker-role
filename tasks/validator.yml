@@ -1,0 +1,18 @@
+---
+- debug:
+    msg: "Run fabiohbarbosa.docker role"
+
+- name: Check variables
+  fail: msg="Variable '{{ item }}' is not defined" 
+  when: item is undefined
+  with_items: 
+    - '{{docker_users}}'
+    - '{{docker_compose_version}}'
+
+- name: 'Check distribution compatibility'
+  fail: msg="Role not compatibility with {{ ansible_distribution }} distribuition"
+  when: ansible_distribution != 'Ubuntu'
+
+- name: 'Check Ubuntu release compatibility'
+  fail: msg="Role not compatibility with {{ ansible_distribution_release }}"
+  when: ansible_distribution_release != 'trusty' and ansible_distribution_release != 'xenial' and ansible_distribution_release != 'yakkety' and ansible_distribution_release != 'zesty'

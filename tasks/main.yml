@@ -1,4 +1,6 @@
 ---
+- include: validator.yml
+
 - include: docker.yml
   become: yes
 

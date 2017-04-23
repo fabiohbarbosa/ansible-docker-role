@@ -14,4 +14,4 @@ USER docker_ansible
 
 WORKDIR /tmp/environment-setup
 
-CMD ansible-playbook -i tests/inventory tests/site.yml -e docker_users=$USER
+CMD ansible-playbook -i tests/inventory tests/site.yml

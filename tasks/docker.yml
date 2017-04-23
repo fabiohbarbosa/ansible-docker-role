@@ -1,16 +1,4 @@
 ---
-- debug:
-    msg: "Run fabiohbarbosa.docker role for users: {{item}}"
-  with_items: '{{docker_users}}'
-
-- name: 'Check distribution compatibility'
-  fail: msg="Role not compatibility with {{ ansible_distribution }} distribuition"
-  when: ansible_distribution != 'Ubuntu'
-
-- name: 'Check Ubuntu release compatibility'
-  fail: msg="Role not compatibility with {{ ansible_distribution_release }}"
-  when: ansible_distribution_release != 'trusty' and ansible_distribution_release != 'xenial' and ansible_distribution_release != 'yakkety' and ansible_distribution_release != 'zesty'
-
 - name: Uninstall old versions
   apt: name={{item}} state=absent
   with_items:
