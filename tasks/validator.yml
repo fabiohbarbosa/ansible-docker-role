@@ -1,7 +1,4 @@
 ---
-- debug:
-    msg: "Running fabiohbarbosa.docker role"
-
 - name: Checking required variables
   fail: msg="Variable '{{ item }}' is not defined" 
   when: item is undefined

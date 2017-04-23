@@ -1,4 +1,7 @@
 ---
+- debug:
+    msg: "Running fabiohbarbosa.docker role"
+    
 - include: validator.yml
 
 - include: docker.yml
