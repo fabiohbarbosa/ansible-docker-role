@@ -1,5 +1,0 @@
-ubuntu-ansible-docker-role:
-  image: ansible-docker-role
-  container_name: ansible-docker-role
-  volumes:
-    - ../:/tmp/environment-setup

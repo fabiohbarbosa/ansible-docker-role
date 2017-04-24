@@ -1,9 +1,9 @@
-FROM ubuntu:17.04
+FROM ubuntu:16.10
 
 USER root
 
-RUN apt-get update && \
-    apt-get install curl sudo ansible git -y
+RUN apt-get update -qq && \
+    apt-get install -qq sudo ansible git -y
 
 ENV USER docker_ansible
 RUN /usr/sbin/groupadd $USER
@@ -14,4 +14,4 @@ USER docker_ansible
 
 WORKDIR /tmp/environment-setup
 
-CMD ansible-playbook -i tests/inventory tests/site.yml
+CMD ansible-playbook -i tests/inventory tests/test.yml

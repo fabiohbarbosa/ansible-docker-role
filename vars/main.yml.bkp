@@ -1,5 +1,0 @@
----
-# vars file for docker
-
-docker_users: []
-docker_compose_version:
