@@ -1,9 +1,9 @@
-FROM vcatechnology/linux-mint:18
+FROM fabiohbarbosa/linux-mint:18
 
 USER root
 
 RUN apt-get update -qq && \
-    apt-get install -qq curl sudo ansible git -y
+    apt-get install -qq sudo ansible git -y
 
 ENV USER docker_ansible
 RUN /usr/sbin/groupadd $USER

@@ -8,7 +8,7 @@
 - include: compatibility.yml
 
 - include: docker.yml
-  sudo: yes
+  become: yes
 
 - include: compose.yml
-  sudo: yes
+  become: yes

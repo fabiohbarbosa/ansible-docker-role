@@ -1,4 +1,4 @@
-FROM fabiohbarbosa/linux-mint:17.3
+FROM fabiohbarbosa/linux-mint:17.1
 
 USER root
 
