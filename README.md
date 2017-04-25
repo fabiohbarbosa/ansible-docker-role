@@ -29,7 +29,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: fabiohbarbosa.docker, x: docker_users: [user1, user2], docker_compose_version: 1.12.0 }
+         - { role: fabiohbarbosa.docker, docker_users: [user1, user2], docker_compose_version: 1.12.0 }
 
 
 License
