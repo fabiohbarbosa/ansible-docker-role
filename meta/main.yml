@@ -9,10 +9,11 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
+    - zesty
     - trusty
     - xenial
     - yakkety
 
-  galaxy_tags: [ docker, dockerce, dockercompose, system ]
+  galaxy_tags: [ docker, dockerce, dockerCompose, system, zesty ]
 
 dependencies: []
