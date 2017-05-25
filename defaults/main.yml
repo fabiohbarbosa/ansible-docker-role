@@ -1,5 +1,3 @@
 ---
-# defaults file for docker
-
-docker_compose_version: 1.12.0
+docker_compose_version: 1.13.0
 ci_env: false
