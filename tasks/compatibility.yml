@@ -7,12 +7,18 @@
     - '{{docker_users}}'
     - '{{docker_compose_version}}'
 
-- name: Set docker repository using distribution release 'Ubuntu Zesty' or 'Ubuntu Yakkety'
+- name: Set docker repository using distribution release 'Ubuntu Zesty'
   set_fact:
      apt_docker_repository: https://download.docker.com/linux/ubuntu yakkety stable
   when: ansible_distribution_release == '{{item}}'
   with_items:
     - 'zesty'
+
+- name: Set docker repository using distribution release 'Ubuntu Yakkety'
+  set_fact:
+     apt_docker_repository: https://download.docker.com/linux/ubuntu yakkety stable
+  when: ansible_distribution_release == '{{item}}'
+  with_items:
     - 'yakkety'
 
 - name: Set docker repository using distribution release 'Ubuntu Xenial', 'LinuxMint Serena' or 'LinuxMint Sarah'

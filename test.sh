@@ -1,5 +1,4 @@
 #!/bin/bash
-
 pwd=`pwd`
 volume="$pwd:/tmp/environment-setup"
 image_name="ansible-docker-role"
