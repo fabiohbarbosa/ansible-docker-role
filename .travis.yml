@@ -1,12 +1,24 @@
 sudo: required
-
-language: ruby
-
 services:
   - docker
 
-script:
-  - bash test.sh
+jobs:
+  include:
+    - stage: mint
+      script: 
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-17-qiana ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-17.1-rebecca ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-17.2-rafaela ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-17.3-rosa ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-18-sarah ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-18.1-serena ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:mint-18.2-sonya ansible-playbook -i tests/inventory tests/test.yml
+
+    - stage: ubuntu
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:ubuntu-14.04-trusty ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:ubuntu-16.04-xenial ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:ubuntu-16.10-yakkety ansible-playbook -i tests/inventory tests/test.yml
+      - docker run -it --rm -v `pwd`:/runner fabiohbarbosa/ansible-runner:ubuntu-17.04-zesty ansible-playbook -i tests/inventory tests/test.yml
 
 notifications:
   email: false
