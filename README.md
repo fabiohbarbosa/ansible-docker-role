@@ -12,8 +12,10 @@ Ansible role to install docker and docker compose.
 
 Requirements
 ------------
-- Tested on Ansible 2.0
-
+- Ansible 2.0
+- Python-apt
+- Sudo 
+- Git
 
 Role Variables
 --------------
@@ -29,7 +31,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: fabiohbarbosa.docker, docker_users: [user1, user2], docker_compose_version: 1.12.0 }
+         - { role: fabiohbarbosa.docker, docker_users: [user1, user2], docker_compose_version: 1.13.0 }
 
 
 License

@@ -2,7 +2,7 @@
 - hosts: all
   vars:
     ci_env: true
-    docker_compose_version: 1.12.0
-    docker_users: [docker_ansible]
+    docker_compose_version: 1.13.0
+    docker_users: [runner]
   tasks:
     - include: '../tasks/main.yml'

@@ -29,6 +29,7 @@
     - 'xenial'
     - 'serena'
     - 'sarah'
+    - 'sonya'
 
 - name: Set docker repository using distribution release 'Ubuntu Trusty', 'LinuxMint Rosa', 'LinuxMint Rafaela', 'LinuxMint Rebecca' or 'LinuxMint Qiana'
   set_fact:
