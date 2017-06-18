@@ -10,21 +10,21 @@
 - name: Set docker repository using distribution release 'Ubuntu Zesty'
   set_fact:
      apt_docker_repository: https://download.docker.com/linux/ubuntu yakkety stable
-  when: ansible_distribution_release == '{{item}}'
+  when: ansible_distribution_release|string in item
   with_items:
     - 'zesty'
 
 - name: Set docker repository using distribution release 'Ubuntu Yakkety'
   set_fact:
      apt_docker_repository: https://download.docker.com/linux/ubuntu yakkety stable
-  when: ansible_distribution_release == '{{item}}'
+  when: ansible_distribution_release|string in item
   with_items:
     - 'yakkety'
 
 - name: Set docker repository using distribution release 'Ubuntu Xenial', 'LinuxMint Serena' or 'LinuxMint Sarah'
   set_fact:
      apt_docker_repository: https://download.docker.com/linux/ubuntu xenial stable
-  when: ansible_distribution_release == '{{item}}'
+  when: ansible_distribution_release|string in item
   with_items:
     - 'xenial'
     - 'serena'
@@ -34,7 +34,7 @@
 - name: Set docker repository using distribution release 'Ubuntu Trusty', 'LinuxMint Rosa', 'LinuxMint Rafaela', 'LinuxMint Rebecca' or 'LinuxMint Qiana'
   set_fact:
      apt_docker_repository: https://download.docker.com/linux/ubuntu trusty stable
-  when: ansible_distribution_release == '{{item}}'
+  when: ansible_distribution_release|string in item
   with_items:
     - 'trusty'
     - 'rosa'

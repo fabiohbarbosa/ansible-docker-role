@@ -1,9 +1,9 @@
 ---
-- name: Update apt packages
-  apt: update_cache=true
-
 - name: Install packages to allow apt to use a repository over HTTPS
-  apt: name={{item}} state=latest
+  apt: 
+    name: '{{item}}'
+    state: latest
+    update_cache: yes
   with_items:
     - apt-transport-https
     - ca-certificates
@@ -24,11 +24,11 @@
     repo: deb [arch=amd64] {{ apt_docker_repository }}
     state: present
 
-- name: Update apt packages
-  apt: update_cache=true
-
 - name: Install docker-ce
-  apt: name=docker-ce state=latest
+  apt: 
+    name: docker-ce
+    state: latest
+    update_cache: yes
 
 - name: Add users to docker group
   shell: usermod -aG docker {{item}}
