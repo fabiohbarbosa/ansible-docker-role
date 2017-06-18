@@ -1,2 +1,4 @@
 .history/
 *.retry
+.bash_history
+.ansible
